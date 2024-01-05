@@ -16,7 +16,7 @@ import com.google.firebase.appcheck.AppCheckToken;
 import com.google.firebase.appcheck.FirebaseAppCheck;
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
-import com.google.firebase.appcheck.safetynet.*;
+//import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
@@ -106,13 +106,14 @@ public class FlutterFirebaseAppCheckPlugin
                       DebugAppCheckProviderFactory.getInstance());
                   break;
                 }
+              //              case safetyNetProvider:
+//                {
+//                  FirebaseAppCheck firebaseAppCheck = getAppCheck(arguments);
+//                  firebaseAppCheck.installAppCheckProviderFactory(
+//                      SafetyNetAppCheckProviderFactory.getInstance());
+//                  break;
+//                }
               case safetyNetProvider:
-                {
-                  FirebaseAppCheck firebaseAppCheck = getAppCheck(arguments);
-                  firebaseAppCheck.installAppCheckProviderFactory(
-                      SafetyNetAppCheckProviderFactory.getInstance());
-                  break;
-                }
               case playIntegrity:
                 {
                   FirebaseAppCheck firebaseAppCheck = getAppCheck(arguments);
